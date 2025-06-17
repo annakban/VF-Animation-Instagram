@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Triffid Carnivore Animation</title>
+  <style>
+    @font-face {
+      font-family: 'TriffidVF';
+      src: url('TriffidCarnVF.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'TriffidBloomer';
+      src: url('Triffid-BloomerRg.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'TriffidKiller';
+      src: url('Triffid-KillerRg.woff2') format('woff2');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f5dfcd;
+      font-family: serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .animated-text {
+      font-family: 'TriffidVF';
+      font-size: 10vw;
+      font-variation-settings: "CRNV" 0;
+      text-align: center;
+      animation: carnLoop 6s infinite alternate ease-in-out;
+      line-height: 1.0;
+      padding: 0 1em;
+    }
+
+    @keyframes carnLoop {
+      from {
+        font-variation-settings: "CRNV" 0;
+      }
+      to {
+        font-variation-settings: "CRNV" 900;
+      }
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      width: 100%;
+      padding: 0 1em;
+      box-sizing: border-box;
+    }
+
+    .label-start, .label-end {
+      font-size: 40px;
+      margin: 0 12px;
+    }
+
+    .label-start {
+      font-family: 'TriffidBloomer';
+    }
+
+    .label-end {
+      font-family: 'TriffidKiller';
+    }
+
+    .slider-track {
+      flex: 1;
+      height: 2px;
+      background: black;
+      position: relative;
+      margin: 0 1em;
+      max-width: 300px;
+    }
+
+    .slider-dot {
+      width: 16px;
+      height: 16px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: -7px;
+      animation: moveDot 6s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveDot {
+      from {
+        left: 0%;
+      }
+      to {
+        left: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animated-text">
+    THE VARIABLE<br>
+    FONT YOUR PROJECT'S BEEN<br>
+    STARVING FOR
+  </div>
+
+  <div class="slider-labels">
+    <span class="label-start">Aa</span>
+    <div class="slider-track">
+      <div class="slider-dot"></div>
+    </div>
+    <span class="label-end">Aa</span>
+  </div>
+
+</body>
+</html>
